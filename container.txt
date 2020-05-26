@@ -1,0 +1,12 @@
+[OLD COMMANDS]
+docker ps
+
+[NEW COMMANDS]
+docker container ls
+docker container run [OPTIONS] <container-name>
+    -d: detach/daemon - run in background
+    -it: interactive + terminal - attach a terminal (TTY) and run interactively
+docker container exec [-it] <container-name> <command>
+    Eg: execute an "ls" command on a container running a bash-shell 
+docker container logs [-f] <container-name>
+docker container prune - remove all stopped containers

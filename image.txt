@@ -1,0 +1,7 @@
+[OLD COMMANDS]
+docker pull <image-name>
+
+[NEW COMMANDS]
+docker image ls
+docker image pull <image-name>
+docker image build -t <image-name> <directory-of-Dockerfile>
