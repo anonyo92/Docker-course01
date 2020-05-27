@@ -1,0 +1,35 @@
+FROM - specify the base docker image
+
+MAINTAINER (deprecated in favor of LABEL) - specify the author, like "apalit anonyo.2014@gmail.com"
+LABEL - specify a list of key-value pairs
+
+WORKDIR - specify the working directory (all subsequent commands run from this dir)
+
+COPY - copy local files into the docker-image (only files within the working-dir/sub-dir can be specified here)
+ADD - more flexible than COPY
+
+ENV - set environment variables for your container
+
+EXPOSE - documents which port within the container accepts connections
+        (This command is only for documentation purposes, and doesn't do anything)
+
+RUN - run a command in the current layer image, like "rm -rf ./webapps/*"
+
+CMD - default command to run when starting the container, like ["java", "-jar", "helloworld.jar"]
+ENTRYPOINT - similar to CMD, but more restricted
+
+
+Q) RUN vs CMD vs ENTRYPOINT vs "docker container exec"?
+Ans: All are ways to execute commands on a container
+    1) RUN is used to run commands (on the previous layer) while building an image 
+    2) CMD is used to run the starting command of the container when the image will be run after it is built. 
+    3) ENTRYPOINT is similar to CMD, only more restricted
+    4) docker container exec is used only on a running container, 
+        not while its image was being built.
+        This gives us a way to enter into the container for debugging.
+        a) Say a container 'c1' is running CMD "/bin/bash".
+            "docker container exec c1 ls" will run this command against the bash shell.
+        b) Say a container 'c2' is not running CMD "/bin/bash", 
+            but it was built on top of an image that had bash installed.
+            "docker container exec -it c2 bash" will help us enter into the shell
+            and interactively execute commands on it, like "ls" 
