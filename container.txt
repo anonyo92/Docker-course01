@@ -6,7 +6,10 @@ docker container ls
 docker container run [OPTIONS] <container-name>
     -d: detach/daemon - run in background
     -it: interactive + terminal - attach a terminal (TTY) and run interactively
+    --name <container-name> - assign a name to the container; useful for networking/DNS
+    --network <network-name> - which network it belongs to
 docker container exec [-it] <container-name> <command>
     Eg: execute an "ls" command on a container running a bash-shell 
 docker container logs [-f] <container-name>
+docker container rm <container-name/id> - remove a specific container
 docker container prune - remove all stopped containers

@@ -1,0 +1,7 @@
+network types:
+    bridge (default)
+    host
+    none
+
+docker network ls
+docker network create
