@@ -10,6 +10,7 @@ docker container run [OPTIONS] <container-name>
     --network <network-name> - which network it belongs to
 docker container exec [-it] <container-name> <command>
     Eg: execute an "ls" command on a container running a bash-shell 
-docker container logs [-f] <container-name>
+docker container logs [-f] <container-name> - fetch the logs of the container
+docker container inspect <container-name> - inpect the container's details
 docker container rm <container-name/id> - remove a specific container
 docker container prune - remove all stopped containers
