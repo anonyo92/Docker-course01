@@ -3,5 +3,9 @@ docker pull <image-name>
 
 [NEW COMMANDS]
 docker image ls
-docker image pull <image-name>
-docker image build -t <image-name> <directory-of-Dockerfile>
+docker image pull <image-name[:tag]>
+docker image build -t <image-name[:tag]> <directory-of-Dockerfile>
+docker image inspect <image-name[:tag]>
+docker image push <image-name[:tag]>
+docker image rm <image-name[:tag]>
+docker image prune
